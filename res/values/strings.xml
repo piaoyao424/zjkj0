@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">屋聯愛家</string>
+    <string name="head_address"></string>
+    <string name="branch_address">宜昌市东山开发区珠海路8号412室</string>
+    <string name="postcode">4330000</string>
+    <string name="phone">0717-6300407</string>
+    <string name="fax">0717-6300407</string>
+    <string name="website">www.chinahcb.net</string>
+
+    <!-- temp path -->
+    <string name="TEMP_PATH">/xq/temp</string>
+
+</resources>

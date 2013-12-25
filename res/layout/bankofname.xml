@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bookdirectoryrelative"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvId_bankname_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="请选择银行所在地开户行名字"
+        android:textColor="#ff666666"
+        android:textSize="20dp" />
+
+    <ListView
+        android:id="@+id/lvId_bankname_namelist"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bank_list_bg" />
+
+</LinearLayout>

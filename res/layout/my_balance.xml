@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/my_gradient_block_bg"
+        android:orientation="vertical" >
+
+        <!--  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/my_gradient_block_bg"
+        android:orientation="horizontal" 
+        >
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/my_gradient_block_bg"
+        android:orientation="vertical" 
+        android:layout_weight="1"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <TextView
+                style="@style/mygoal_left_text"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/tvId_huibi_wu"
+                style="@style/mygoal_right_text"
+                android:text="" />
+        </RelativeLayout>
+</LinearLayout>
+        <!-- 分隔符 -->
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/my_gradient_block_bg"
+        android:orientation="vertical"
+        android:layout_weight="1"
+         >
+        <ImageView style="@style/mygoal_horizontal_separator" />
+
+        <!-- 累计获得惠币 -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <TextView
+                style="@style/mygoal_left_text"
+                android:text="累计获得惠币" />
+
+            <TextView
+                android:id="@+id/tvId_huibi_total"
+                style="@style/mygoal_right_text"
+                android:text="" />
+        </RelativeLayout>
+        <!-- 分隔符 -->
+</LinearLayout>
+</LinearLayout>
+   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/my_gradient_block_bg"
+        android:orientation="horizontal" 
+        >
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/my_gradient_block_bg"
+        android:orientation="vertical" 
+        android:layout_weight="1"
+        >
+        <ImageView style="@style/mygoal_horizontal_separator" />
+        <!-- 剩余惠币 -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <TextView
+                style="@style/mygoal_left_text"
+                android:text="剩余惠币" />
+
+            <TextView
+                android:id="@+id/tvId_huibi_shengyu"
+                style="@style/mygoal_right_text"
+                android:text="" />
+        </RelativeLayout>
+        <!-- 分隔符 -->
+</LinearLayout>
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/my_gradient_block_bg"
+        android:orientation="vertical" 
+        android:layout_weight="1"
+        >
+        <ImageView style="@style/mygoal_horizontal_separator" />
+		<!-- 累计消费惠币 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <TextView
+                style="@style/mygoal_left_text"
+                android:text="累计消费惠币" />
+
+            <TextView
+                android:id="@+id/tvId_huibi_cost"
+                style="@style/mygoal_right_text"
+                android:text="" />
+        </RelativeLayout>
+        </LinearLayout>
+      </LinearLayout>
+    </LinearLayout>
+    
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/mygoal_margin_left"
+        android:layout_marginRight="@dimen/mygoal_margin_right"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <!-- 开始时间 -->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/record_time_block_bg"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/mygoal_time_left"
+                    android:layout_weight="5"
+                    android:text="开始时间" />
+
+                <com.iawu.transaction.wheelview.WheelShow
+                    android:id="@+id/mybalance_start_time"
+                    style="@style/date_button_style"
+                    android:layout_weight="7" />
+            </LinearLayout>
+            <!-- 结束时间 -->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/record_time_block_bg"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/mygoal_time_left"
+                    android:layout_weight="5"
+                    android:text="结束时间" />
+
+                <com.iawu.transaction.wheelview.WheelShow
+                    android:id="@+id/mybalance_end_time"
+                    style="@style/date_button_style"
+                    android:layout_weight="7" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/mybalance_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="@color/white"
+            android:dividerHeight="1dp"
+            android:fadingEdge="none"
+            android:listSelector="@android:color/transparent"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/my_goal_gray_bg"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:padding="1dp" >
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mygoal_list_text_height"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal" >
+
+       
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="3"
+            android:background="@color/white" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="充值时间"
+                android:textColor="@color/main_text_color"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvId_huibi_list_item_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:paddingRight="5dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/main_text_color"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mygoal_list_text_height"
+        android:layout_marginTop="1dp"
+        android:background="@null"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@color/white" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="充值卡号"
+                android:textColor="@color/main_text_color"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvId_huibi_list_item_cardnum"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:paddingRight="5dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/main_text_color"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="3"
+            android:background="@color/white" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="充值金额"
+                android:textColor="@color/main_text_color"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvId_huibi_list_item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:paddingRight="5dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/main_text_color"
+                android:textSize="12sp" />
+            
+        </RelativeLayout>
+    </LinearLayout>
+
+   
+
+</LinearLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@drawable/home_tab_bg"
+    android:orientation="horizontal" >
+
+    <!-- 首页 -->
+
+    <LinearLayout
+        android:id="@+id/tab_linear_home"
+        style="@style/tab_linear_style" >
+
+        <ImageView
+            android:id="@+id/tab_image_home"
+            style="@style/tab_image_style"
+            android:src="@drawable/home_tab_home_selected" />
+
+        <TextView
+            android:id="@+id/tab_textview_home"
+            style="@style/tab_textview_style"
+            android:text="首页" />
+    </LinearLayout>
+
+    <!-- 我要叫车 -->
+
+    <LinearLayout
+        android:id="@+id/tab_linear_calltaxi"
+        style="@style/tab_linear_style" >
+
+        <ImageView
+            android:id="@+id/tab_image_calltaxi"
+            style="@style/tab_image_style"
+            android:src="@drawable/home_tab_call_selected" />
+
+        <TextView
+            android:id="@+id/tab_textview_calltaxi"
+            style="@style/tab_textview_style"
+            android:text="我要叫车" />
+    </LinearLayout>
+
+    <!-- 我的积分 -->
+
+    <LinearLayout
+        android:id="@+id/tab_linear_goal"
+        style="@style/tab_linear_style" >
+
+        <ImageView
+            android:id="@+id/tab_image_goal"
+            style="@style/tab_image_style"
+            android:src="@drawable/home_tab_grade_selected" />
+
+        <TextView
+            android:id="@+id/tab_textview_goal"
+            style="@style/tab_textview_style"
+            android:text="我的积分" />
+    </LinearLayout>
+
+    <!-- 设置 -->
+
+    <LinearLayout
+        android:id="@+id/tab_linear_setting"
+        style="@style/tab_linear_style" >
+
+        <ImageView
+            android:id="@+id/tab_image_setting"
+            style="@style/tab_image_style"
+            android:src="@drawable/home_tab_cog_selected" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tab_textview_setting"
+            style="@style/tab_textview_style"
+            android:text="设置" />
+    </LinearLayout>
+
+</LinearLayout>

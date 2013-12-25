@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/linear_interpolator" >
+
+    <!-- 定义缩放 -->
+    <!--
+         <scale 
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:toXScale="0.01"
+        android:toYScale="0.01"
+        android:fillAfter="true"
+        android:duration="2000"
+        />
+    -->
+    <!-- 定义透明度变化。从不透明（alpha=1）变化为完全透明（alpha=0） -->
+    <alpha
+        android:duration="1000"
+        android:fromAlpha="1"
+        android:toAlpha="0.0" />
+    <!-- 定义画面旋转 -->
+    <rotate
+        android:duration="1000"
+        android:fromDegrees="0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toDegrees="90" />
+
+</set>

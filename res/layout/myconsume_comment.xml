@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#b0000000"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/view_gray_bg"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <RatingBar
+                android:id="@+id/myconsume_comment_rating"
+                style="?android:attr/ratingBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:isIndicator="false"
+                android:max="100"
+                android:maxHeight="32dp"
+                android:minHeight="32dp"
+                android:numStars="5"
+                android:progressDrawable="@drawable/my_ratingbar_star_big"
+                android:stepSize="1" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/myconsume_comment_edit"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/white"
+            android:gravity="top|left"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/myconsume_comment_abort"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/comment_enter_normal"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/gray_black"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/myconsume_comment_sure"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/comment_enter_normal"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/gray_black"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

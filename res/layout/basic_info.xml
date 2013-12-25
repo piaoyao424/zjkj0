@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp" >
+
+        <ImageView
+            android:id="@+id/baseinfo_head_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/head_default" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <!-- 姓名性别 -->
+
+            <RelativeLayout style="@style/basicinfo_relative_above" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="姓名:"
+                    android:textColor="@color/main_text_color" />
+
+                <TextView
+                    android:id="@+id/user_real_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="45dp"
+                    android:text=""
+                    android:textColor="@color/main_text_color" />
+
+                <TextView
+                    android:id="@+id/user_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="150dp"
+                    android:text=""
+                    android:textColor="@color/main_text_color" />
+            </RelativeLayout>
+            <!-- 等级 -->
+
+            <RelativeLayout style="@style/basicinfo_relative_above" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="等级:"
+                    android:textColor="@color/main_text_color" />
+
+                <TextView
+                    android:id="@+id/user_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="45dp"
+                    android:text=""
+                    android:textColor="@color/main_text_color" />
+            </RelativeLayout>
+            <!-- QQ -->
+
+            <RelativeLayout style="@style/basicinfo_relative_above" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="  QQ:"
+                    android:textColor="@color/main_text_color" />
+
+                <TextView
+                    android:id="@+id/user_qq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="45dp"
+                    android:text=""
+                    android:textColor="@color/main_text_color" />
+            </RelativeLayout>
+            <!-- 手机 -->
+
+            <RelativeLayout style="@style/basicinfo_relative_above" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="手机:"
+                    android:textColor="@color/main_text_color" />
+
+                <TextView
+                    android:id="@+id/user_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="45dp"
+                    android:text=""
+                    android:textColor="@color/main_text_color" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadingEdge="none"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/my_goal_gray_bg"
+                android:orientation="vertical" >
+
+                <!-- 用户名 -->
+
+                <LinearLayout style="@style/basicinfo_relative_below" >
+
+                    <TextView
+                        style="@style/basicinfo_left_text"
+                        android:text="用户名" />
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        style="@style/basicinfo_right_text"
+                        android:text="" />
+                </LinearLayout>
+                <!-- 推荐人 -->
+
+                <LinearLayout style="@style/basicinfo_relative_below" >
+
+                    <TextView
+                        style="@style/basicinfo_left_text"
+                        android:text="推荐人" />
+
+                    <TextView
+                        android:id="@+id/recommander"
+                        style="@style/basicinfo_right_text"
+                        android:text="" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/basicinfo_relative_below" >
+
+                    <TextView
+                        style="@style/basicinfo_left_text"
+                        android:text="生日" />
+
+                    <TextView
+                        android:id="@+id/user_birthday"
+                        style="@style/basicinfo_right_text"
+                        android:text="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/basicinfo_relative_below"
+                    android:layout_marginBottom="2dp" >
+
+                    <TextView
+                        style="@style/basicinfo_left_text"
+                        android:text="Email" />
+
+                    <TextView
+                        android:id="@+id/user_email"
+                        style="@style/basicinfo_right_text"
+                        android:text="" />
+                </LinearLayout>
+                <!-- 分隔符 -->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="7dp"
+                    android:background="@color/white" />
+                <!-- 信用卡号 -->
+
+                <LinearLayout 
+                    style="@style/basicinfo_relative_below" 
+                    android:visibility="gone"
+                    >
+
+                    <TextView
+                        style="@style/basicinfo_left_text"
+                        android:text="提现卡号" />
+
+                    <TextView
+                        android:id="@+id/user_creditcard"
+                        style="@style/basicinfo_right_text"
+                        android:text="" />
+                </LinearLayout>
+                <!-- 身份证号 -->
+
+                <LinearLayout style="@style/basicinfo_relative_below" >
+
+                    <TextView
+                        style="@style/basicinfo_left_text"
+                        android:text="身份证号" />
+
+                    <TextView
+                        android:id="@+id/user_identitycard"
+                        style="@style/basicinfo_right_text"
+                        android:text="" />
+                </LinearLayout>
+                <!-- 区域 -->
+
+                <LinearLayout style="@style/basicinfo_relative_below" >
+
+                    <TextView
+                        style="@style/basicinfo_left_text"
+                        android:text="区域" />
+
+                    <TextView
+                        android:id="@+id/user_zone"
+                        style="@style/basicinfo_right_text"
+                        android:text="" />
+                </LinearLayout>
+                <!-- 联系地址 -->
+
+                <LinearLayout
+                    style="@style/basicinfo_relative_below"
+                    android:layout_marginBottom="2dp" >
+
+                    <TextView
+                        style="@style/basicinfo_left_text"
+                        android:text="联系地址" />
+
+                    <TextView
+                        android:id="@+id/user_address"
+                        style="@style/basicinfo_right_text"
+                        android:text="" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp" >
+
+        <Button
+            android:id="@+id/basicinfo_button_send_comment"
+            style="@style/basicinfo_button"
+            android:text="发出评价" />
+
+        <Button
+            android:id="@+id/basicinfo_button_get_comment"
+            style="@style/basicinfo_button"
+            android:layout_marginLeft="20dp"
+            android:text="收到评价" />
+    </LinearLayout>
+
+</LinearLayout>

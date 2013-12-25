@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/my_consume_bg"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="right"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/myconsume_list_text"
+                android:text="加盟商 ：" />
+
+            <TextView
+                style="@style/myconsume_list_text"
+                android:text="商品数 ：" />
+
+            <TextView
+                style="@style/myconsume_list_text"
+                android:text="总价 ：" />
+
+            <TextView
+                style="@style/myconsume_list_text"
+                android:text="消费时间 ：" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/myconsume_list_shop_name"
+                style="@style/myconsume_list_text"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/myconsume_list_goods_num"
+                style="@style/myconsume_list_text"
+                android:text="" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/myconsume_list_goods_totalcost"
+                    style="@style/myconsume_list_text"
+                    android:text=""
+                    android:textColor="@color/red" />
+
+                <TextView
+                    style="@style/myconsume_list_text"
+                    android:layout_marginLeft="3dp"
+                    android:text="元" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/myconsume_list_time"
+                style="@style/myconsume_list_text"
+                android:text="" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/consume_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:background="@null"
+        android:divider="@drawable/view_gray_bg"
+        android:dividerHeight="2dp"
+        android:fadingEdge="none"
+        android:scrollbars="none" >
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,143 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <ImageView
+            android:id="@+id/designate_comment_head"
+            android:layout_width="72dp"
+            android:layout_height="96dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/designated_driver_list_shape"
+            android:scaleType="fitCenter"
+            android:src="@drawable/head_default" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/designate_comment_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="赵红霞"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <RatingBar
+                    android:id="@+id/designate_comment_star"
+                    style="?android:attr/ratingBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:isIndicator="true"
+                    android:max="100"
+                    android:maxHeight="32dp"
+                    android:minHeight="32dp"
+                    android:numStars="5"
+                    android:progressDrawable="@drawable/my_ratingbar_star_big"
+                    android:stepSize="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="bottom" >
+
+                <LinearLayout
+                    android:id="@+id/designated_comment_call"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_designated_item_button"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="3dp" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:padding="2dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/tel_black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:text="呼叫"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/designated_comment_do"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/selector_designated_item_button"
+                    android:padding="3dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="评价"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="其他用户评价"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <ListView
+            android:id="@+id/designated_comment_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="#FFd7d7d7"
+            android:dividerHeight="1dp"
+            android:fadingEdge="none"
+            android:listSelector="@null"
+            android:scrollbars="vertical"
+            android:footerDividersEnabled="false">
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

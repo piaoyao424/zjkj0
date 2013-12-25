@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:fadingEdge="none"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/aboutus_guide_text"
+                android:text="第一招：屋内叫车" />
+
+            <TextView
+                style="@style/aboutus_guide_text"
+                android:text="        出门前20分钟叫好车，车到门口，直接走人。不再日晒雨淋的。" />
+
+            <TextView
+                style="@style/aboutus_guide_text"
+                android:layout_marginTop="10dp"
+                android:text="第二招：预约叫车" />
+
+            <TextView
+                style="@style/aboutus_guide_text"
+                android:text="        长途用车提前一天约车，出行不再受到影响。" />
+
+            <TextView
+                style="@style/aboutus_guide_text"
+                android:layout_marginTop="10dp"
+                android:text="第三招：加价叫车" />
+
+            <TextView
+                style="@style/aboutus_guide_text"
+                android:text="        在原来搭车的费用上面加上一个合适的搭车费用，更加容易叫到车。" />
+
+            <TextView
+                style="@style/aboutus_guide_text"
+                android:layout_marginTop="10dp"
+                android:text="第四招：高峰期叫车" />
+
+            <TextView
+                style="@style/aboutus_guide_text"
+                android:text="        高峰期叫车请选择等待时间长一点，如选择愿意等30分钟。" />
+
+            <TextView
+                style="@style/aboutus_guide_text"
+                android:layout_marginTop="10dp"
+                android:text="第五招：语音叫车" />
+
+            <TextView
+                style="@style/aboutus_guide_text"
+                android:text="        请尽量使用标准的普通话，说出您的所在地和搭车的目的地。" />
+
+            <TextView
+                style="@style/aboutus_guide_text"
+                android:layout_marginTop="10dp"
+                android:text="第六招：叫车变动" />
+
+            <TextView
+                style="@style/aboutus_guide_text"
+                android:text="        有意外事情，不能要车，请尽快的提前通知司机，避免失约，受到平台的处罚。" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

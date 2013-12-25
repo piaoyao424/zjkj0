@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bookdirectoryrelative"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvId_banksheng_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="请选择银行所在的省或直辖市"
+        android:textColor="#ff666666"
+        android:textSize="25dp" />
+
+    <ListView
+        android:id="@+id/lvId_banksheng_banklist"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bank_list_bg" />
+
+</LinearLayout>

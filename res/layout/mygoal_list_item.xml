@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/my_goal_gray_bg"
+    android:orientation="vertical" >
+
+    <!-- 第一行 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mygoal_list_text_height"
+        android:layout_margin="1dp"
+        android:background="@null"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/mygoal_list_item_num"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/my_goal_white_bg"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/main_text_color"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="2"
+            android:background="@drawable/my_goal_white_bg"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:paddingLeft="2dp"
+                android:text="区域"
+                android:textColor="@color/main_text_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/mygoal_list_item_zone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical|right"
+                android:paddingRight="2dp"
+                android:text=""
+                android:textColor="@color/main_text_color"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="3"
+            android:background="@drawable/my_goal_white_bg"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center"
+                android:paddingLeft="2dp"
+                android:text="申请平台"
+                android:textColor="@color/main_text_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/mygoal_list_item_platform"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical|right"
+                android:paddingRight="2dp"
+                android:text=""
+                android:textColor="@color/main_text_color"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mygoal_list_text_height"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:background="@drawable/my_goal_white_bg" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/mygoal_list_margin_left"
+            android:gravity="center_vertical"
+            android:text="申请时间"
+            android:textColor="@color/main_text_color"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/mygoal_list_apply_time"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/mygoal_list_margin_right"
+            android:gravity="center_vertical|right"
+            android:text=""
+            android:textColor="@color/main_text_color"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mygoal_list_text_height"
+        android:layout_margin="1dp"
+        android:background="@drawable/my_goal_white_bg"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/mygoal_list_margin_left"
+            android:gravity="center_vertical"
+            android:text="处理时间"
+            android:textColor="@color/main_text_color"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/mygoal_list_solved_time"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/mygoal_list_margin_right"
+            android:gravity="center_vertical|right"
+            android:text=""
+            android:textColor="@color/main_text_color"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>

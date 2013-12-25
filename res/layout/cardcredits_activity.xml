@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+    
+ <include layout="@layout/top_title_bar" />
+
+      <!-- 
+		卡激活
+		-->
+     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+	
+        <LinearLayout style="@style/calltaxi_center_editlayout" 
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="卡号"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <ImageView style="@style/login_regist_imageseperator" />
+
+            <EditText
+                android:id="@+id/etId_credits_entercard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:inputType="number"
+                android:longClickable="false"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/calltaxi_center_editlayout"
+             >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="密钥"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <ImageView style="@style/login_regist_imageseperator" />
+
+            <EditText
+                android:id="@+id/etId_credits_enterpwd"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:inputType="textPassword"
+                android:longClickable="false"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" >
+
+            <Button
+                android:id="@+id/btnId_credits_ok"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+				android:paddingLeft="5dp"
+            	android:paddingRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_driver_grab"
+                android:text="激活"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+    	</LinearLayout>  
+    	</LinearLayout>  
+</LinearLayout>

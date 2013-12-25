@@ -1,0 +1,249 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <View
+            android:id="@+id/calltaxi_blank"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@null">
+        </View>
+
+        <RelativeLayout
+            android:id="@+id/calltaxi_center_relativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" >
+
+            <RelativeLayout
+                android:id="@+id/calltaxi_center_voice_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/voice_image" />
+
+                <com.iawu.uikit.bubbleani.BubbleAniView
+                    android:id="@+id/calltaxi_center_animation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/calltaxi_center_textlayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/calltaxi_timelayout"
+                    style="@style/calltaxi_center_editlayout"
+                    android:layout_marginBottom="10dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:text="时    间"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView style="@style/login_regist_imageseperator" />
+
+                    <com.btten.calltaxi.CallTaxi.tools.WheelDateShow
+                        android:id="@+id/calltaxi_center_time_editview"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/calltaxi_startlayout"
+                    style="@style/calltaxi_center_editlayout"
+                    android:layout_marginBottom="10dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:text="出发地"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView style="@style/login_regist_imageseperator" />
+
+                    <EditText
+                        android:id="@+id/calltaxi_center_start_editview"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:background="@null"
+                        android:paddingLeft="5dp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/calltaxi_endlayout"
+                    style="@style/calltaxi_center_editlayout"
+                    android:layout_marginBottom="10dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:text="目的地"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView style="@style/login_regist_imageseperator" />
+
+                    <EditText
+                        android:id="@+id/calltaxi_center_end_editview"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:background="@null"
+                        android:paddingLeft="5dp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/calltaxi_cargolayout"
+                    style="@style/calltaxi_center_editlayout"
+                    android:layout_marginBottom="10dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:text="货    物"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView style="@style/login_regist_imageseperator" />
+
+                    <EditText
+                        android:id="@+id/calltaxi_center_cargo_editview"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:background="@null"
+                        android:paddingLeft="5dp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" >
+
+            <ImageButton
+                android:id="@+id/calltaxi_switch_imagebutton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="2"
+                android:background="@drawable/selector_button_drawable"
+                android:scaleType="centerInside"
+                android:src="@drawable/home_tab_microphone_icon" />
+
+            <Button
+                android:id="@+id/calltaxt_submit_textbutton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="5"
+                android:background="@drawable/selector_button_drawable"
+                android:text="提    交"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/calltaxi_MenuLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal"
+        android:background="@null"
+        android:gravity="top"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/calltaxi_LeftListMenuLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_listmenubutton"
+            android:orientation="vertical"
+            android:text="选择加价"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/calltaxi_RightListMenuLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_listmenubutton"
+            android:orientation="vertical"
+            android:text="愿意等车"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</RelativeLayout>

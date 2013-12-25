@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_title_bar" />
+	
+    <ListView
+        android:id="@+id/designated_driver_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:dividerHeight="1dp"
+        android:divider="#FFd7d7d7"
+        android:listSelector="@null"
+        android:cacheColorHint="@android:color/transparent"
+        android:fadingEdge="none"
+        android:scrollbars="vertical"
+        />
+</LinearLayout>

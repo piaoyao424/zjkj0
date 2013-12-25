@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="2dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RatingBar
+            android:id="@+id/individual_comment_item_rating"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:isIndicator="true"
+            android:max="100"
+            android:maxHeight="16dp"
+            android:minHeight="16dp"
+            android:numStars="5"
+            android:progressDrawable="@drawable/my_ratingbar_star"
+            android:rating="4"
+            android:stepSize="1" />
+
+        <TextView
+            android:id="@+id/individual_comment_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:text=""
+            android:textColor="@color/main_text_color"
+            android:textSize="16dp" />
+        <!--
+        <RelativeLayout 
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:text=""
+            android:textColor="@color/main_text_color"
+            android:textSize="16dp"
+            android:id="@+id/individual_comment_item_time"
+            />
+        </RelativeLayout>
+        -->
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/individual_comment_item_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text=""
+        android:textColor="@color/gray_black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/individual_comment_item_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text=""
+        android:textColor="@color/main_text_color"
+        android:textSize="12dp" />
+
+</LinearLayout>

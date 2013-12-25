@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:fadingEdge="none"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="5"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/versioncode_textview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:background="@null"
+                android:gravity="center"
+                android:text="version 1.0v"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:gravity="center" >
+
+            <!-- 联系我们 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/my_goal_gray_bg"
+                android:orientation="vertical"
+                android:padding="1dp" >
+
+                <RelativeLayout
+                    android:id="@+id/aboutus_relative_contact"
+                    style="@style/aboutus_relative_style"
+                    android:layout_marginBottom="1dp" >
+
+                    <TextView
+                        style="@style/aboutus_text_style"
+                        android:text="联系我们" />
+
+                    <ImageView style="@style/aboutus_image_style" />
+                </RelativeLayout>
+                <!-- 叫车指南 -->
+
+                <RelativeLayout
+                    android:id="@+id/aboutus_relative_callguide"
+                    style="@style/aboutus_relative_style"
+                    android:layout_marginBottom="1dp" >
+
+                    <TextView
+                        style="@style/aboutus_text_style"
+                        android:text="叫车指南" />
+
+                    <ImageView style="@style/aboutus_image_style" />
+                </RelativeLayout>
+                <!-- 清空缓存 -->
+
+                <RelativeLayout
+                    android:id="@+id/aboutus_relative_clearcache"
+                    style="@style/aboutus_relative_style"
+                    android:layout_marginBottom="1dp" >
+
+                    <TextView
+                        style="@style/aboutus_text_style"
+                        android:text="清空缓存" />
+
+                    <ImageView style="@style/aboutus_image_style" />
+                </RelativeLayout>
+                <!-- 欢迎页 -->
+
+                <RelativeLayout
+                    android:id="@+id/aboutus_relative_welcome"
+                    style="@style/aboutus_relative_style"
+                    android:layout_marginBottom="1dp"
+                    android:visibility="gone" >
+
+                    <TextView
+                        style="@style/aboutus_text_style"
+                        android:text="欢迎页" />
+
+                    <ImageView style="@style/aboutus_image_style" />
+                </RelativeLayout>
+                <!-- 意见反馈 -->
+
+                <RelativeLayout
+                    android:id="@+id/aboutus_relative_feedback"
+                    style="@style/aboutus_relative_style" 
+                    android:layout_marginBottom="1dp">
+
+                    <TextView
+                        style="@style/aboutus_text_style"
+                        android:text="意见反馈" />
+
+                    <ImageView style="@style/aboutus_image_style" />
+                </RelativeLayout>
+                <!-- 修改密码 -->
+                <RelativeLayout
+                    android:id="@+id/aboutus_relative_changepasswd"
+                    style="@style/aboutus_relative_style" 
+                    android:layout_marginBottom="1dp">
+
+                    <TextView
+                        style="@style/aboutus_text_style"
+                        android:text="修改密码" />
+
+                    <ImageView style="@style/aboutus_image_style" />
+                </RelativeLayout>
+                
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/aboutus_logout_button"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:background="@drawable/selector_driver_grab"
+                android:gravity="center"
+                android:text="注销登录"
+                android:textColor="@color/red"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

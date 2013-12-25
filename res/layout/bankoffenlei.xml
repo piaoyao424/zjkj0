@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bookdirectoryrelative"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvId_bankfenlei_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="请选择银行名字"
+        android:textColor="#ff666666"
+        android:textSize="25dp" />
+
+    <ListView
+        android:id="@+id/lvId_bankfenlei_banklist"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>

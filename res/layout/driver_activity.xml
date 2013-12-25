@@ -1,0 +1,197 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <RadioGroup
+                    android:id="@+id/driverview_radiogroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <RadioButton
+                        android:id="@+id/driverview_radiobutton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:button="@drawable/selector_radiobutton"
+                        android:paddingLeft="20dp"
+                        android:text="我是出租车司机"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/driverview_radiobutton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:button="@drawable/selector_radiobutton"
+                        android:paddingLeft="20dp"
+                        android:text="我是货车司机"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/driverview_radiobutton3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:button="@drawable/selector_radiobutton"
+                        android:paddingLeft="20dp"
+                        android:text="我是代驾"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                       />
+
+                    <RadioButton
+                        android:id="@+id/driverview_radiobutton4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:button="@drawable/selector_radiobutton"
+                        android:paddingLeft="20dp"
+                        android:text="我是陪驾"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/driver_carnum_edittext_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:gravity="center_vertical"
+                            android:text="鄂"
+                            android:textColor="@color/red"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/taxi_carnum_edittext"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="@null"
+                            android:gravity="center_vertical|left"
+                            android:hint="请输入车牌号"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/driver_carnum_edittext_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:gravity="center_vertical"
+                            android:text="鄂"
+                            android:textColor="@color/red"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/trunk_carnum_edittext"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="@null"
+                            android:gravity="center_vertical|left"
+                            android:hint="请输入车牌号"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:id="@+id/iamdriver_enter_button"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/selector_driver_grab"
+                android:text="确        定"
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="30dp"
+                android:background="@drawable/driver_state_bg"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:text="您当前身份是:"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/driver_state_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:text="普通乘客"
+                    android:textColor="@color/red"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

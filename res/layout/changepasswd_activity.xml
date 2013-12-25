@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_title_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:gravity="top|center_horizontal" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="255dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@null" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/login_block_bg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="@null"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/login_regist_editlayout"
+                    android:layout_marginTop="20dp" >
+
+                    <TextView
+                        style="@style/login_regist_textview"
+                        android:hint="原密码" />
+
+                    <ImageView style="@style/login_regist_imageseperator" />
+
+                    <EditText
+                        android:id="@+id/changepasswd_old_edittext"
+                        style="@style/login_regist_editview"
+                        android:inputType="textPassword" />
+                </LinearLayout>
+                
+                <LinearLayout
+                    style="@style/login_regist_editlayout"
+                    android:layout_marginTop="5dp" >
+
+                    <TextView
+                        style="@style/login_regist_textview"
+                        android:hint="新密码" />
+
+                    <ImageView style="@style/login_regist_imageseperator" />
+
+                    <EditText
+                        android:id="@+id/changepasswd_new_edittext"
+                        style="@style/login_regist_editview"
+                        android:inputType="textPassword" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/login_regist_editlayout"
+                    android:layout_marginTop="5dp" >
+
+                    <TextView
+                        style="@style/login_regist_textview"
+                        android:hint="重复密码" />
+
+                    <ImageView style="@style/login_regist_imageseperator" />
+
+                    <EditText
+                        android:id="@+id/changepasswd_pwd_again_edittext"
+                        style="@style/login_regist_editview"
+                        android:inputType="textPassword" />
+                </LinearLayout>
+
+                
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+                    <Button
+                        android:id="@+id/changepasswd_tijiao_button"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="10"
+                        android:background="@drawable/selector_driver_grab"
+                        android:text="提交"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                    <Button
+                        android:id="@+id/changepasswd_quxiao_button"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="10"
+                        android:background="@drawable/selector_driver_grab"
+                        android:text="取消"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+    
+    <include layout="@layout/top_title_bar" />
+     <LinearLayout style="@style/homeview_line_linearlayout" >
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            <ImageButton
+                android:id="@+id/ibIdshowpublic_icon_image0"
+                style="@style/homeview_icon_imagebutton" />
+
+            <TextView
+                android:id="@+id/tvId_showpublic_icon_text0"
+                style="@style/homeview_icon_textview" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            <ImageButton
+                android:id="@+id/ibIdshowpublic_icon_image1"
+                style="@style/homeview_icon_imagebutton" />
+
+            <TextView
+                android:id="@+id/tvId_showpublic_icon_text1"
+                style="@style/homeview_icon_textview" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            <ImageButton
+                android:id="@+id/ibIdshowpublic_icon_image2"
+                style="@style/homeview_icon_imagebutton" />
+
+            <TextView
+                android:id="@+id/tvId_showpublic_icon_text2"
+                style="@style/homeview_icon_textview" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/homeview_line_linearlayout" >
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            
+        </LinearLayout>
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            
+        </LinearLayout>
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/homeview_line_linearlayout" >
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" />
+    </LinearLayout>
+
+</LinearLayout>

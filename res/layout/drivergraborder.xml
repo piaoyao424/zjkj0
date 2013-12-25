@@ -1,0 +1,213 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/grab_data_state"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/red"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/grab_center_sound"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@null"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/selector_grab_sound_button"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/grab_center_text"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@null"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:visibility="gone" >
+
+                <LinearLayout
+                    android:id="@+id/grab_addon_layout"
+                    style="@style/calltaxi_grab_editlayout"
+                    android:layout_marginBottom="10dp" >
+
+                    <TextView
+                        android:id="@+id/grab_addon_title"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:text="时    间"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView style="@style/login_regist_imageseperator" />
+
+                    <TextView
+                        android:id="@+id/grab_addon_content"
+                        style="@style/grab_order_textlayout" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/grab_startlayout"
+                    style="@style/calltaxi_grab_editlayout"
+                    android:layout_marginBottom="10dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:text="出发地"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView style="@style/login_regist_imageseperator" />
+
+                    <TextView
+                        android:id="@+id/grab_start_content"
+                        style="@style/grab_order_textlayout" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/grab_endlayout"
+                    style="@style/calltaxi_grab_editlayout"
+                    android:layout_marginBottom="10dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:text="目的地"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView style="@style/login_regist_imageseperator" />
+
+                    <TextView
+                        android:id="@+id/grab_end_content"
+                        style="@style/grab_order_textlayout" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/grab_cargolayout"
+                    style="@style/calltaxi_grab_editlayout"
+                    android:layout_marginBottom="10dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:editable="false"
+                        android:gravity="center"
+                        android:text="货    物"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView style="@style/login_regist_imageseperator" />
+
+                    <TextView
+                        android:id="@+id/grab_cargo_content"
+                        style="@style/grab_order_textlayout" />
+                </LinearLayout>
+                
+                 <LinearLayout
+                    android:id="@+id/grab_typelayout"
+                    style="@style/calltaxi_grab_editlayout"
+                    android:layout_marginBottom="10dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:editable="false"
+                        android:gravity="center"
+                        android:text="类    型"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView style="@style/login_regist_imageseperator" />
+
+                    <TextView
+                        android:id="@+id/grab_type_content"
+                        style="@style/grab_order_textlayout" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" >
+
+                <TextView
+                    android:id="@+id/grab_addmoney"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="加价0元"
+                    android:textColor="@color/orange"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/grab_waittime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="愿意等0分钟"
+                    android:textColor="@color/orange"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/grab_grabbutton"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/selector_driver_grab"
+                android:text="抢    单"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

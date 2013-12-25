@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/homeview_line_linearlayout" >
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            <ImageButton
+                android:id="@+id/homeview_icon_image0"
+                style="@style/homeview_icon_imagebutton" />
+
+            <TextView
+                android:id="@+id/homeview_icon_text0"
+                style="@style/homeview_icon_textview" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            <ImageButton
+                android:id="@+id/homeview_icon_image1"
+                style="@style/homeview_icon_imagebutton" />
+
+            <TextView
+                android:id="@+id/homeview_icon_text1"
+                style="@style/homeview_icon_textview" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            <ImageButton
+                android:id="@+id/homeview_icon_image2"
+                style="@style/homeview_icon_imagebutton" />
+
+            <TextView
+                android:id="@+id/homeview_icon_text2"
+                style="@style/homeview_icon_textview" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/homeview_line_linearlayout" >
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            <ImageButton
+                android:id="@+id/homeview_icon_image3"
+                style="@style/homeview_icon_imagebutton" />
+
+            <TextView
+                android:id="@+id/homeview_icon_text3"
+                style="@style/homeview_icon_textview" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            <ImageButton
+                android:id="@+id/homeview_icon_image4"
+                style="@style/homeview_icon_imagebutton" />
+
+            <TextView
+                android:id="@+id/homeview_icon_text4"
+                style="@style/homeview_icon_textview" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            <ImageButton
+                android:id="@+id/homeview_icon_image5"
+                style="@style/homeview_icon_imagebutton" />
+
+            <TextView
+                android:id="@+id/homeview_icon_text5"
+                style="@style/homeview_icon_textview" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/homeview_line_linearlayout" >
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            <ImageButton
+                android:id="@+id/homeview_icon_image6"
+                style="@style/homeview_icon_imagebutton" />
+
+            <TextView
+                android:id="@+id/homeview_icon_text6"
+                style="@style/homeview_icon_textview" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            <ImageButton
+                android:id="@+id/homeview_icon_image7"
+                style="@style/homeview_icon_imagebutton" />
+
+            <TextView
+                android:id="@+id/homeview_icon_text7"
+                style="@style/homeview_icon_textview" />
+        </LinearLayout>
+		<LinearLayout style="@style/homeview_icon_linearlayout" >
+
+            <ImageButton
+                android:id="@+id/homeview_icon_image8"
+                style="@style/homeview_icon_imagebutton" />
+
+            <TextView
+                android:id="@+id/homeview_icon_text8"
+                style="@style/homeview_icon_textview" />
+        </LinearLayout>
+      </LinearLayout> 
+
+</LinearLayout>
