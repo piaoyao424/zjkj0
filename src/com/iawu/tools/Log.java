@@ -9,25 +9,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Calendar;
-
-import javax.crypto.Cipher;
-import javax.crypto.SecretKey;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.DESKeySpec;
-
+import android.annotation.SuppressLint;
 import android.text.format.DateFormat;
-
 import com.iawu.algorithm.MD5;
-import com.iawu.algorithm.TypeTransform;
 
 /**
  * 
  * @author kirozhao
  * 
  */
+@SuppressLint("SdCardPath")
 public class Log {
 	private static final String TAG = "BTCore.Log";
-
 	public static final String SDCARD_LOG_PATH = "/sdcard/btten/";
 	public static final String MM_LOG = "mm.log";
 	public static final String PUSH_LOG = "push.log";
@@ -48,7 +41,6 @@ public class Log {
 	private static long logCreateTime = 0;
 	private static byte[] desKey = null;
 
-	
 	protected Log() {
 
 	}
@@ -60,36 +52,38 @@ public class Log {
 	// Log.p = new PrintStream(os);
 	// }
 
-	public static void setOutputPath(String dirPath,String path,int clientver) {
-		
-		String logType="normallog";
-		String username="bttenlog";
-		 
-		
-		if (path == null || path.length() == 0 || username == null || username.length() == 0) {
+	public static void setOutputPath(String dirPath, String path, int clientver) {
+
+		String logType = "normallog";
+		String username = "bttenlog";
+
+		if (path == null || path.length() == 0 || username == null
+				|| username.length() == 0) {
 			return;
 		}
 
 		try {
 			{
 				File dir = new File(dirPath);
-				//判断文件夹是否存在,如果不存在则创建文件夹
+				// 判断文件夹是否存在,如果不存在则创建文件夹
 				if (!dir.exists()) {
 					dir.mkdir();
 				}
 			}
-			path= dirPath+path;
+			path = dirPath + path;
 			Log.path = path;
 			File file = new File(path);
 			if (!file.exists()) {
 				file.createNewFile();
 			}
 
-			Log.p = new PrintStream(new BufferedOutputStream(new FileOutputStream(path)));
+			Log.p = new PrintStream(new BufferedOutputStream(
+					new FileOutputStream(path)));
 			// Log.p = new PrintStream(path);
 			if (file.length() == 0) { // new file
 				logCreateTime = System.currentTimeMillis();
-				LogHelper.initLogHeader(p, logType, username, logCreateTime, clientver);
+				LogHelper.initLogHeader(p, logType, username, logCreateTime,
+						clientver);
 				genDesKey(username, logCreateTime);
 			} else {
 				initCreateTime();
@@ -133,47 +127,48 @@ public class Log {
 		return level;
 	}
 
-	public static Boolean IsDebug()
-	{
-		if(level <= LEVEL_DEBUG)
+	public static Boolean IsDebug() {
+		if (level <= LEVEL_DEBUG)
 			return true;
 		return false;
 	}
+
 	public static void e(final String tag, final String msg) {
 		if (level <= LEVEL_ERROR) {
 			android.util.Log.e(tag, msg);
-			LogHelper.writeToStream(p, desKey, "E/" + tag, msg+"\n");
+			LogHelper.writeToStream(p, desKey, "E/" + tag, msg + "\n");
 		}
 	}
+
 	public static void Exception(final String tag, Exception ex) {
-		 e(tag,ex.getMessage()+":\n"+ex.getStackTrace()+"\n");
+		e(tag, ex.getMessage() + ":\n" + ex.getStackTrace() + "\n");
 	}
 
 	public static void w(final String tag, final String msg) {
 		if (level <= LEVEL_WARNING) {
 			android.util.Log.w(tag, msg);
-			LogHelper.writeToStream(p, desKey, "W/" + tag, msg+"\n");
+			LogHelper.writeToStream(p, desKey, "W/" + tag, msg + "\n");
 		}
 	}
 
 	public static void i(final String tag, final String msg) {
 		if (level <= LEVEL_INFO) {
 			android.util.Log.i(tag, msg);
-			LogHelper.writeToStream(p, desKey, "I/" + tag, msg+"\n");
+			LogHelper.writeToStream(p, desKey, "I/" + tag, msg + "\n");
 		}
 	}
 
 	public static void d(final String tag, final String msg) {
 		if (level <= LEVEL_DEBUG) {
 			android.util.Log.d(tag, msg);
-			LogHelper.writeToStream(p, desKey, "D/" + tag, msg+"\n");
+			LogHelper.writeToStream(p, desKey, "D/" + tag, msg + "\n");
 		}
 	}
 
 	public static void v(final String tag, final String msg) {
 		if (level <= LEVEL_VERBOSE) {
 			android.util.Log.v(tag, msg);
-			LogHelper.writeToStream(p, desKey, "V/" + tag, msg+"\n");
+			LogHelper.writeToStream(p, desKey, "V/" + tag, msg + "\n");
 		}
 	}
 
@@ -182,7 +177,8 @@ public class Log {
 		sb.append(username);
 		sb.append(logCreateTime);
 		sb.append("dfdhgc");
-		desKey = (MD5.getMessageDigest(sb.toString().getBytes())).substring(7, 21).getBytes();
+		desKey = (MD5.getMessageDigest(sb.toString().getBytes())).substring(7,
+				21).getBytes();
 	}
 
 	private static final String SYS_INFO;
@@ -190,7 +186,8 @@ public class Log {
 		final StringBuilder sb = new StringBuilder();
 		sb.append("VERSION.RELEASE:[" + android.os.Build.VERSION.RELEASE);
 		sb.append("]\nVERSION.CODENAME:[" + android.os.Build.VERSION.CODENAME);
-		sb.append("]\nVERSION.INCREMENTAL:[" + android.os.Build.VERSION.INCREMENTAL);
+		sb.append("]\nVERSION.INCREMENTAL:["
+				+ android.os.Build.VERSION.INCREMENTAL);
 		sb.append("]\nBOARD:[" + android.os.Build.BOARD);
 		sb.append("]\nDEVICE:[" + android.os.Build.DEVICE);
 		sb.append("]\nDISPLAY:[" + android.os.Build.DISPLAY);
@@ -216,12 +213,14 @@ final class LogHelper {
 	private LogHelper() {
 	}
 
-	public static void writeToStream(final PrintStream stream, final String tag, final String msg) {
+	public static void writeToStream(final PrintStream stream,
+			final String tag, final String msg) {
 		if (stream == null || Util.IsEmpty(tag) || Util.IsEmpty(msg)) {
 			return;
 		}
 
-		String plainText = Calendar.getInstance().getTime().toGMTString() + " " + tag + " " + msg;
+		String plainText = Calendar.getInstance().getTime().toGMTString() + " "
+				+ tag + " " + msg;
 		try {
 			stream.write(plainText.getBytes());
 		} catch (IOException e) {
@@ -234,9 +233,11 @@ final class LogHelper {
 	private static final boolean IsEncryption = false;
 
 	// DES encryption, 'LV' to serial
-	public static void writeToStream(final PrintStream stream, byte[] desKey, final String tag, final String msg) {
+	public static void writeToStream(final PrintStream stream, byte[] desKey,
+			final String tag, final String msg) {
 
-		if (stream == null || Util.IsEmpty(desKey) || Util.IsEmpty(tag) || Util.IsEmpty(msg)) {
+		if (stream == null || Util.IsEmpty(desKey) || Util.IsEmpty(tag)
+				|| Util.IsEmpty(msg)) {
 			return;
 		}
 
@@ -246,46 +247,36 @@ final class LogHelper {
 
 		String plainText = sb.toString();
 
-		//������
-		if(!IsEncryption)
-		{
+		if (!IsEncryption) {
 			try {
 				stream.write(plainText.getBytes());
-				 
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			stream.flush();
 			return;
 		}
-		
-		try {
-			// DES.DESEncrypt(cipherText, plainText.getBytes(), desKey);
 
-			// SecureRandom sr = new SecureRandom();
-			// ��ԭʼ�ܳ���ݴ���DESKeySpec����
-			DESKeySpec dks = new DESKeySpec(desKey);
-			// ����һ���ܳ׹�����Ȼ�������DESKeySpecת����
-			// һ��SecretKey����
-			SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
-			SecretKey securekey = keyFactory.generateSecret(dks);
-			// Cipher����ʵ����ɼ��ܲ���
-			Cipher cipher = Cipher.getInstance("DES");
-			// ���ܳ׳�ʼ��Cipher����
-			cipher.init(Cipher.ENCRYPT_MODE, securekey);
-			// ���ڣ���ȡ��ݲ�����
-			// ��ʽִ�м��ܲ���
-			byte[] cipherText = cipher.doFinal(plainText.getBytes());
-
-			stream.write(TypeTransform.intToByteArrayLH(cipherText.length));
-			stream.write(cipherText);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		stream.flush();
+		// try {
+		// DESKeySpec dks = new DESKeySpec(desKey);
+		// SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
+		// SecretKey securekey = keyFactory.generateSecret(dks);
+		// Cipher cipher = Cipher.getInstance("DES");
+		// cipher.init(Cipher.ENCRYPT_MODE, securekey);
+		// byte[] cipherText = cipher.doFinal(plainText.getBytes());
+		//
+		// stream.write(TypeTransform.intToByteArrayLH(cipherText.length));
+		// stream.write(cipherText);
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
+		// stream.flush();
 	}
 
-	public static void initLogHeader(final PrintStream stream, final String logType, final String username, final long logCreateTime, final int clientver) {
+	public static void initLogHeader(final PrintStream stream,
+			final String logType, final String username,
+			final long logCreateTime, final int clientver) {
 		if (stream == null || Util.IsEmpty(username) || logCreateTime == 0) {
 			return;
 		}
@@ -302,17 +293,20 @@ final class LogHelper {
 		stream.println((count++) + " " + android.os.Build.DEVICE);
 		stream.println((count++) + " " + android.os.Build.DISPLAY);
 		stream.println((count++) + " " + android.os.Build.FINGERPRINT);
-		// stream.println((count++) + " " + android.os.Build.HARDWARE); // for 1.6 compatible
+		// stream.println((count++) + " " + android.os.Build.HARDWARE); // for
+		// 1.6 compatible
 		stream.println((count++) + " " + android.os.Build.HOST);
 		stream.println((count++) + " " + android.os.Build.MANUFACTURER);
 		stream.println((count++) + " " + android.os.Build.MODEL);
 		stream.println((count++) + " " + android.os.Build.PRODUCT);
-		// stream.println((count++) + " " + android.os.Build.RADIO); // for 1.6 compatible
-		// p.println((count++) + " " + android.os.Build.SERIAL); // throw exception
+		// stream.println((count++) + " " + android.os.Build.RADIO); // for 1.6
+		// compatible
+		// p.println((count++) + " " + android.os.Build.SERIAL); // throw
+		// exception
 		stream.println((count++) + " " + android.os.Build.TAGS);
 		stream.println((count++) + " " + android.os.Build.TYPE);
 		stream.println((count++) + " " + android.os.Build.USER);
-	//	stream.println(Log.getSysInfo());
+		// stream.println(Log.getSysInfo());
 		stream.println(); // newline ���� end of log header
 		stream.flush();
 	}

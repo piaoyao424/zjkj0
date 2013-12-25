@@ -67,7 +67,7 @@ public class DetailActivity extends BaseActivity{
 	OnSceneCallBack detailCallBack=new OnSceneCallBack() {
 		
 		@Override
-		public void OnSuccess(Object data, NetSceneBase netScene) {
+		public void OnSuccess(Object data, NetSceneBase<?> netScene) {
 			HideProgress();
 			
 			DetailItem item=(DetailItem)data;
@@ -92,7 +92,7 @@ public class DetailActivity extends BaseActivity{
 		}
 		
 		@Override
-		public void OnFailed(int status, String info, NetSceneBase netScene) {
+		public void OnFailed(int status, String info, NetSceneBase<?> netScene) {
 			// TODO Auto-generated method stub
 			HideProgress();
 			ErrorAlert(status,info);

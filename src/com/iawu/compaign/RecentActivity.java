@@ -54,7 +54,7 @@ public class RecentActivity extends BaseActivity implements OnScrollListener{
 
 	OnSceneCallBack mainCallBack=new OnSceneCallBack() {
 		@Override
-		public void OnSuccess(Object data, NetSceneBase netScene) {
+		public void OnSuccess(Object data, NetSceneBase<?> netScene) {
 			HideProgress();
 			ActivityItems items=(ActivityItems)data;
 			if (page == 1){
@@ -65,7 +65,7 @@ public class RecentActivity extends BaseActivity implements OnScrollListener{
 		}
 		
 		@Override
-		public void OnFailed(int status, String info, NetSceneBase netScene) {
+		public void OnFailed(int status, String info, NetSceneBase<?> netScene) {
 			// TODO Auto-generated method stub
 			HideProgress();
 			ErrorAlert(status,info);

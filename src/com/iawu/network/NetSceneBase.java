@@ -10,14 +10,13 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
-
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
 
 import com.iawu.tools.Log;
 
-public abstract class NetSceneBase <Result> implements Runnable {
+public abstract class NetSceneBase<Result> implements Runnable {
 
 	private static final String TAG = "NetSceneBase";
 	private static final int CancelCode = -1;
@@ -37,7 +36,6 @@ public abstract class NetSceneBase <Result> implements Runnable {
 		 * Indicates that {@link AsyncTask#onPostExecute} has finished.
 		 */
 		FINISHED,
-		
 	}
 
 	private static final InternalHandler sHandler = new InternalHandler();
@@ -52,108 +50,103 @@ public abstract class NetSceneBase <Result> implements Runnable {
 			if (result.scene == null)
 				return;
 
-			result.scene.doInForeground(msg.what,result);
+			result.scene.doInForeground(msg.what, result);
 		}
 	}
 
 	private static class NetResult {
-		NetSceneBase scene;
-		Object result;
-		int statusCode;
+		NetSceneBase<?> scene = null;
+		Object result = null;
+		int statusCode = 0;
 	}
 
 	private volatile Status mStatus = Status.PENDING;
 
-	private boolean isPost=false;
+	private boolean isPost = false;
+
 	public NetSceneBase(boolean isPost) {
-		this.isPost=isPost;
+		this.isPost = isPost;
 		params = new BasicHttpParams();
 		mStatus = Status.PENDING;
 	}
 
-	protected void SetPost(boolean post)
-	{
-		isPost=post;
+	protected void SetPost(boolean post) {
+		isPost = post;
 	}
+
 	protected HttpParams params;
 	protected HttpGet httpGet;
 	protected HttpPost httpPost;
 	protected String targetUrl;
-	
-	private void httpInit()
-	{
-		if(isPost)
-		{
-			httpPost=new HttpPost(targetUrl);
+
+	private void httpInit() {
+		if (isPost) {
+			httpPost = new HttpPost(targetUrl);
 			httpPost.setParams(params);
-		}else
-		{
+		} else {
 			httpGet = new HttpGet(targetUrl);
 			httpGet.setParams(params);
-			
+
 		}
 	}
-	private void httpAbord()
-	{
-		if(isPost)
-		{
-			if(httpPost==null)
+
+	private void httpAbord() {
+		if (isPost) {
+			if (httpPost == null)
 				return;
 			httpPost.abort();
-			 
-		}else
-		{
-			if(httpGet==null)
+
+		} else {
+			if (httpGet == null)
 				return;
 			httpGet.abort();
 		}
 	}
-	private void httpReset()
-	{
-		httpGet=null;
-		httpPost=null;
+
+	private void httpReset() {
+		httpGet = null;
+		httpPost = null;
 	}
-	private HttpResponse httpRequest() throws ClientProtocolException, IOException
-	{
-		if(isPost)
-		{
-			if(httpPost == null)
+
+	private HttpResponse httpRequest() throws ClientProtocolException,
+			IOException {
+		if (isPost) {
+			if (httpPost == null)
 				return null;
-			return	 HttpClientHelper.getHttpClient().execute(httpPost);
-			 
-		}else
-		{
-			if(httpGet == null)
+			return HttpClientHelper.getHttpClient().execute(httpPost);
+
+		} else {
+			if (httpGet == null)
 				return null;
 			return HttpClientHelper.getHttpClient().execute(httpGet);
 		}
-	 
+
 	}
-	
+
 	@Override
 	public void run() {
-		//只能执行一次
-		if(mStatus !=Status.PENDING)
+		// 只能执行一次
+		if (mStatus != Status.PENDING)
 			return;
-		
+
 		mStatus = Status.RUNNING;
-		  
+
 		// 为这个HttpGet设置一些特定的属性，别的属性沿用HttpClient
 		HttpConnectionParams.setConnectionTimeout(params, 60000);
-		
+
 		httpInit();
-		
+
 		try {
 			HttpResponse httpResponse = httpRequest();
 			int status = httpResponse.getStatusLine().getStatusCode();
 			if (status != HttpStatus.SC_OK) {
-				//failed(status);
+				// failed(status);
 				failed(NetConst.NetConnectError);
 				return;
 			}
-			Result result=doReceive(httpResponse.getEntity());
+			Result result = doReceive(httpResponse.getEntity());
 			success(result);
-		
+
 		} catch (Exception ex) {
 			failed(NetConst.NetConnectError);
 			Log.Exception(TAG, ex);
@@ -161,21 +154,20 @@ public abstract class NetSceneBase <Result> implements Runnable {
 		return;
 	}
 
-	//设置回调
-	OnSceneCallBack callBack;
-	public void SetCallBack(OnSceneCallBack oncallBack)
-	{
-			callBack = oncallBack;
+	// 设置回调
+	private OnSceneCallBack callBack = null;
+
+	public void SetCallBack(OnSceneCallBack oncallBack) {
+		callBack = oncallBack;
 	}
-	
-	//只能回调一次
-	public OnSceneCallBack GetCallBack()
-	{
+
+	// 只能回调一次
+	public OnSceneCallBack GetCallBack() {
 		OnSceneCallBack ret = callBack;
 		callBack = null;
 		return ret;
 	}
-	
+
 	protected void success(Result result) {
 		if (mStatus != Status.RUNNING)
 			return;
@@ -186,9 +178,7 @@ public abstract class NetSceneBase <Result> implements Runnable {
 		resultObj.scene = this;
 		resultObj.result = result;
 
-		Message message;
-		message = sHandler.obtainMessage(MSG_SUCCESS, resultObj);
-		message.sendToTarget();
+		sHandler.obtainMessage(MSG_SUCCESS, resultObj).sendToTarget();
 	}
 
 	private void failed(int statusCode) {
@@ -196,35 +186,30 @@ public abstract class NetSceneBase <Result> implements Runnable {
 			return;
 		mStatus = Status.FINISHED;
 		httpReset();
-		
+
 		NetResult resultObj = new NetResult();
 		resultObj.scene = this;
 		resultObj.statusCode = statusCode;
 
-		Message message;
-		message = sHandler.obtainMessage(MSG_FAIL, resultObj);
-		message.sendToTarget();
-
+		sHandler.obtainMessage(MSG_FAIL, resultObj).sendToTarget();
 	}
 
-	
-	 
 	public void cancel() {
 		if (mStatus != Status.RUNNING)
 			return;
-			try {
-				httpAbord();
-			} catch (Exception ex) {
-				Log.Exception(TAG, ex);
-			}
-		 
+		try {
+			httpAbord();
+		} catch (Exception ex) {
+			Log.Exception(TAG, ex);
+		}
 		failed(CancelCode);
 	}
-	
-    private void doInForeground(int what,NetResult result) {
-    	switch (what) {
+
+	@SuppressWarnings("unchecked")
+	private void doInForeground(int what, NetResult result) {
+		switch (what) {
 		case MSG_SUCCESS:
-			onSuccess((Result)result.result);
+			onSuccess((Result) result.result);
 			break;
 		case MSG_FAIL:
 			onFailed(result.statusCode);
@@ -233,17 +218,14 @@ public abstract class NetSceneBase <Result> implements Runnable {
 		default:
 			break;
 		}
-    	result.scene = null;
-    	result = null;
+		result.scene = null;
+		result = null;
 	}
-	abstract protected Result doReceive(HttpEntity httpEntity) ;
-    abstract protected void onFailed(int statusCode) ;
-    
-    abstract protected void onSuccess(Result result);
-    
-    //targetUrl,params,ThreadPoolUtils.execute(this);
-  //  abstract public void doScene();
 
-	 
-    
+	abstract protected Result doReceive(HttpEntity httpEntity);
+
+	abstract protected void onFailed(int statusCode);
+
+	abstract protected void onSuccess(Result result);
+
 }
